@@ -1,0 +1,28 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, sans-serif;background:#f7fafc}
+
+/* header using flexbox */
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#1f2937;color:#fff}
+.topnav a{color:#fff;margin-left:12px;text-decoration:none}
+
+/* main grid - article + sidebar */
+.container{display:grid;grid-template-columns:2fr 1fr;gap:18px;padding:18px;align-items:start}
+.article{background:#fff;padding:18px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.aside{background:#fff;padding:18px;border-radius:8px}
+
+/* inside article, three boxes aligned with flexbox */
+.row{display:flex;gap:12px;margin:12px 0}
+.row > div{flex:1;padding:14px;background:#eef2f7;border-radius:6px;text-align:center}
+
+/* simple keyframe animation for the title */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.animated{animation:fadeUp .8s ease both}
+
+/* footer */
+.foot{text-align:center;padding:12px;background:#111;color:#fff;margin-top:12px;border-radius:6px}
+
+/* collapse to single column on mobile */
+@media (max-width:800px){
+  .container{grid-template-columns:1fr}
+  .row{flex-direction:column}
+}

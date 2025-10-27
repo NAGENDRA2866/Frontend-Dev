@@ -1,0 +1,74 @@
+/* Basic page styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Section Layout */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* About Section */
+.about {
+  flex: 1;
+}
+
+.about h2 {
+  margin-top: 0;
+}
+
+/* Image Section */
+.image-section img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .main-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .nav {
+    margin-top: 10px;
+  }
+}
