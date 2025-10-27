@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+/* Hero section */
+.hero {
+  background: url('hero.jpg') no-repeat center/cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* About section */
+.about {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+}
+
+.about img {
+  width: 300px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+/* Services */
+.services {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  background: rgba(0, 121, 107, 0.1);
+}
+
+.box {
+  background: white;
+  border: 2px solid #00796b;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 40px;
+}
+
+input, button {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #00796b;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about {
+    flex-direction: column;
+  }
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+}
