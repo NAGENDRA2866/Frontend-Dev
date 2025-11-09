@@ -1,0 +1,32 @@
+body { font-family: sans-serif; margin: 0; animation: fadeIn 1s; }
+header {
+  background: #333; color: white; text-align: center; padding: 10px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 100vh;
+}
+aside {
+  background: #444; color: white; padding: 20px;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px; padding: 20px;
+}
+.card {
+  background: #eee; padding: 30px; border-radius: 10px;
+  text-align: center; transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+@media (max-width: 750px) {
+  .container { grid-template-columns: 1fr; }
+  aside { text-align: center; }
+}
