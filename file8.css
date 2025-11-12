@@ -1,0 +1,31 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #fafafa;
+}
+
+.compare {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+img {
+  border-radius: 10px;
+  transition: filter 0.4s;
+}
+
+.filtered {
+  filter: brightness(60%);
+}
+
+.filtered:hover {
+  filter: none;
+}
+
+@media (max-width: 700px) {
+  .compare {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+  transition: filter 0.4s ease;
+}
+
+.blur { filter: blur(3px); }
+.grayscale { filter: grayscale(100%); }
+.sepia { filter: sepia(80%); }
+.brightness { filter: brightness(60%); }
+.contrast { filter: contrast(180%); }
+.hue { filter: hue-rotate(90deg); }
+
+img:hover {
+  filter: none;
+}
+
+figcaption {
+  margin-top: 5px;
+}
