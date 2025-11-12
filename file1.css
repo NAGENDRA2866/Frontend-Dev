@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background:#f3f6f8;
+  text-align:center;
+}
+
+.box-row {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  margin:30px;
+}
+
+.box {
+  width:120px;
+  padding:20px;
+  transition:border-color 0.3s;
+}
+
+.solid {border:3px solid #333;}
+.dashed {border:3px dashed #333;}
+.double {border:6px double #333;}
+.groove {border:4px groove #333; border-radius:12px;}
+
+.box:hover {border-color:#00aaff;}

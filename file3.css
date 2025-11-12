@@ -1,0 +1,20 @@
+body,html{margin:0;}
+header,footer{
+  position:fixed;
+  width:100%;
+  background:#222;color:#fff;text-align:center;
+  padding:10px;
+}
+header{top:0;} footer{bottom:0;}
+section{
+  min-height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  color:#fff;font-size:1.5rem;
+}
+.linear{
+  background:linear-gradient(45deg,#ff6,#f06);
+  background-attachment:fixed; /* parallax-like */
+}
+.radial{
+  background:radial-gradient(circle,#06f,#003);
+}

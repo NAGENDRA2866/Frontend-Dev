@@ -1,0 +1,16 @@
+body{margin:0;font-family:sans-serif;}
+.navbar{
+  display:flex;justify-content:center;gap:20px;
+  background:#333;padding:15px;
+  flex-wrap:wrap;
+}
+.navbar a{
+  color:#fff;text-decoration:none;padding:8px 16px;border-radius:4px;
+  transition:all 0.3s ease;
+}
+.navbar a:hover{background:#555;}
+.navbar a.active{background:#0af;}
+footer{text-align:center;padding:10px;background:#222;color:#ccc;}
+@media(max-width:700px){
+  .navbar{flex-direction:column;align-items:center;}
+}

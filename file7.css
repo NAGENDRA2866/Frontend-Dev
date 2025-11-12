@@ -1,0 +1,7 @@
+body{font-family:'Segoe UI',sans-serif;line-height:1.6;margin:20px;}
+h1{text-align:center;text-shadow:1px 1px 2px #aaa;}
+mark{background:yellow;color:#000;}
+strong{color:#d00;}
+em{color:#06f;}
+p::first-letter{font-size:2em;color:#f60;}
+p::first-line{font-weight:bold;}

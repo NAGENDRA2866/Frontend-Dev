@@ -1,0 +1,19 @@
+/* Attribute selector */
+input[type="text"]{border:2px solid #66f;}
+
+/* Starts-with selector */
+a[href^="https"]{color:green;}
+
+/* Pseudo-classes */
+a:hover{text-decoration:underline;}
+input:focus{outline:2px solid orange;}
+
+/* nth-child example */
+li:nth-child(odd){background:#ddd;}
+
+/* Pseudo-elements */
+p::before{content:"★ ";color:red;}
+p::after{content:" ★";color:red;}
+
+/* Combinator example */
+ul > li + li{color:blue;}
