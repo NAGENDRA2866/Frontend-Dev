@@ -1,0 +1,22 @@
+body {
+  background-color: #f4f4f4;
+  padding: 40px;
+  font-family: Georgia, serif;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+  column-span: all;
+}
+
+.article {
+  column-count: 3;
+  column-gap: 30px;
+}
+
+img {
+  width: 150px;
+  float: left;
+  margin: 10px;
+}

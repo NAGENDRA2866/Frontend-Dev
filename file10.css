@@ -1,28 +1,94 @@
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial, sans-serif;background:#f7fafc}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-/* header using flexbox */
-.top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#1f2937;color:#fff}
-.topnav a{color:#fff;margin-left:12px;text-decoration:none}
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
 
-/* main grid - article + sidebar */
-.container{display:grid;grid-template-columns:2fr 1fr;gap:18px;padding:18px;align-items:start}
-.article{background:#fff;padding:18px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-.aside{background:#fff;padding:18px;border-radius:8px}
+nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+}
 
-/* inside article, three boxes aligned with flexbox */
-.row{display:flex;gap:12px;margin:12px 0}
-.row > div{flex:1;padding:14px;background:#eef2f7;border-radius:6px;text-align:center}
+/* Hero section */
+.hero {
+  background: url('hero.jpg') no-repeat center/cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 
-/* simple keyframe animation for the title */
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.animated{animation:fadeUp .8s ease both}
+/* About section */
+.about {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+}
 
-/* footer */
-.foot{text-align:center;padding:12px;background:#111;color:#fff;margin-top:12px;border-radius:6px}
+.about img {
+  width: 300px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
 
-/* collapse to single column on mobile */
-@media (max-width:800px){
-  .container{grid-template-columns:1fr}
-  .row{flex-direction:column}
+/* Services */
+.services {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  background: rgba(0, 121, 107, 0.1);
+}
+
+.box {
+  background: white;
+  border: 2px solid #00796b;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 40px;
+}
+
+input, button {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #00796b;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about {
+    flex-direction: column;
+  }
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+}
+
+.plan {
+  background: white;
+  width: 250px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+  background-color: #e0f7fa;
+}
+
+.popular {
+  border-color: #00796b;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
