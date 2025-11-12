@@ -1,0 +1,25 @@
+p {
+  color: blue; /* Element selector */
+}
+
+.highlight {
+  color: green; /* Class selector */
+}
+
+#unique {
+  color: red; /* ID selector */
+}
+
+input[type="text"] {
+  border: 2px solid purple; /* Attribute selector */
+}
+
+ul > li {
+  list-style-type: square; /* Child combinator */
+}
+
+footer {
+  background: #ccc;
+  padding: 10px;
+  text-align: center;
+}

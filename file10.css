@@ -1,11 +1,32 @@
-body { margin: 0; font-family: Arial; }
-header, footer { background: #333; color: white; text-align: center; padding: 10px; }
-main { display: flex; justify-content: center; align-items: center; height: 70vh; }
-form {
-  background: #f4f4f4; padding: 20px; border-radius: 10px;
-  display: flex; flex-direction: column; align-items: center;
-  box-shadow: 0 0 10px gray;
+body {
+  margin: 0;
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-input, button { margin: 5px; padding: 8px; }
-button:hover { background: blue; color: white; }
-input:focus { border: 2px solid blue; }
+
+header, footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+button:hover {
+  background: #007bff;
+  color: white;
+}

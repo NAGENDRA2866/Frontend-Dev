@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  background: #f9f9f9;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.example {
+  margin: 10px;
+}
+
+a:hover {
+  color: red;
+}
+
+button:active {
+  background: #ffb703;
+}
+
+input:focus {
+  border: 2px solid blue;
+  outline: none;
+}
+
+.example-list li:nth-child(even) {
+  background: #ddd;
+}

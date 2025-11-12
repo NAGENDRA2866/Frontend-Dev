@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: none;
+}
+
+.primary {
+  background: #007bff;
+  color: white;
+}
+
+.primary:hover {
+  background: #0056b3;
+}
+
+.secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.outline {
+  border: 2px solid #333;
+  background: transparent;
+}
+
+button:focus {
+  outline: 3px solid gold;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
