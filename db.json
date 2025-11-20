@@ -1,0 +1,43 @@
+{
+  "login": [
+    {
+      "id": "fa72",
+      "email": "nani@gmail.com",
+      "password": "Sghhjk@1234"
+    },
+    {
+      "id": "3071",
+      "email": "nanidarlinghere9@gmail.com",
+      "password": "Sghjbnb@123"
+    },
+    {
+      "id": "4f53",
+      "email": "mirthipatinagendra09@gmail.com",
+      "password": "abc@14312435"
+    }
+  ],
+  "signUp": [
+    {
+      "fullName": "Joe",
+      "Phone": "8798765432",
+      "password": "pass1223",
+      "gender": "male",
+      "id": "71e2",
+      "country": "country"
+    },
+    {
+      "id": "57a4",
+      "fullname": "Mirthipati Nagendra",
+      "Phone": "8798989898",
+      "password": "ahfldh@1324",
+      "country": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {}
+      }
+    }
+  ]
+}
