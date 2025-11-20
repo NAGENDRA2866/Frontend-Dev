@@ -53,7 +53,6 @@ function getDataf(){
 // })
 // .catch(error => console.error("GET Error:", error));
 // }
-// nagu
 function createPost(fullname,Phone,password,country) {
 $.ajax({
 url: "http://localhost:3000/signUp",
