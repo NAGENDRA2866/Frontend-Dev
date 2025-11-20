@@ -55,23 +55,25 @@ function getDataf(){
 // }
 
 function createPost(fullname,Phone,password,country) {
-fetch('http://localhost:3000/signUp', {
+$.ajax({
+url: "http://localhost:3000/signUp",
 method: "POST",
-headers: { "Content-Type": "application/json" },
-body: JSON.stringify({
+contentType: "application/json",
+data: JSON.stringify({
     fullname:fullname,
     Phone:Phone,
     password:password,
     // gender:gender,
     // id:id,
     country:country
-})
-})
-.then(response => response.json())
-.then(data => {
-console.log("POST → Created Post:", data);
-})
-.catch(error => console.error("POST Error:", error));
+}),
+success: function (data) {
+console.log("POST Response:", data);
+},
+error: function (err) {
+console.error("POST Error:", err);
+}
+});
 }
 
 document.getElementById('button').addEventListener('click', (e) => {
