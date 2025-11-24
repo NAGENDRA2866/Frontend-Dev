@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q7 - Mouse Path & Coordinates Logger</title>
+  <style>body{font-family:Segoe UI,Arial;margin:16px}.box{width:400px;height:400px;border:2px dashed #666;position:relative} #coords{margin-top:8px} .dot{width:8px;height:8px;border-radius:50%;background:red;position:absolute;transform:translate(-50%,-50%)}</style>
+</head>
+<body>
+  <h1>Q7 - Mouse Path & Coordinates Logger</h1>
+  <div class="box" id="box"></div>
+  <div id="coords">Move inside box to see coordinates</div>
+
+  <script>
+    (function(){
+      const box = document.getElementById('box'); const coords = document.getElementById('coords');
+      box.addEventListener('mousemove', (e)=>{
+        coords.textContent = `clientX: ${e.clientX}, clientY: ${e.clientY}`;
+      });
+      box.addEventListener('dblclick', (e)=>{
+        const rect = box.getBoundingClientRect();
+        const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+        const dot = document.createElement('div'); dot.className='dot'; dot.style.left = x + 'px'; dot.style.top = y + 'px';
+        box.appendChild(dot);
+      });
+    })();
+  </script>
+</body>
+</html>

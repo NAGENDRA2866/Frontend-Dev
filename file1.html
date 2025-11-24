@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q1 - Dynamic Product List Manager</title>
+  <style>
+    body{font-family:Segoe UI,Arial;margin:16px}
+    ul{list-style:none;padding:0}
+    li{padding:8px;border:1px solid #ddd;margin:6px 0;display:flex;align-items:center;justify-content:space-between}
+    .actions button{margin-left:6px}
+    .editable{flex:1;margin-right:12px}
+  </style>
+</head>
+<body>
+  <h1>Q1 - Dynamic Product List</h1>
+  <input id="productInput" placeholder="New product name" />
+  <button id="addBtn">Add Product</button>
+  <ul id="productList"></ul>
+
+  <script>
+    (function(){
+      const listEl = document.getElementById('productList');
+      const input = document.getElementById('productInput');
+      const addBtn = document.getElementById('addBtn');
+
+      function createItem(name){
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        span.textContent = name;
+        span.className = 'editable';
+        span.tabIndex = 0;
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+        const edit = document.createElement('button'); edit.textContent = 'Edit';
+        const del = document.createElement('button'); del.textContent = 'Delete';
+        actions.appendChild(edit); actions.appendChild(del);
+        li.appendChild(span); li.appendChild(actions);
+        return li;
+      }
+
+      addBtn.addEventListener('click', ()=>{
+        if(!input.value.trim()) return;
+        listEl.appendChild(createItem(input.value.trim()));
+        input.value = '';
+      });
+
+      // event delegation for edit/delete
+      listEl.addEventListener('click', (e)=>{
+        const btn = e.target; const li = btn.closest('li'); if(!li) return;
+        const span = li.querySelector('.editable');
+        if(btn.tagName.toLowerCase() === 'button'){
+          if(btn.textContent === 'Edit'){
+            const val = span.textContent;
+            const input = document.createElement('input'); input.value = val; input.style.width = '70%';
+            span.replaceWith(input); input.focus();
+            btn.textContent = 'Save';
+          } else if(btn.textContent === 'Save'){
+            const inputBox = li.querySelector('input');
+            const spanNew = document.createElement('span');
+            spanNew.className = 'editable'; spanNew.tabIndex=0; spanNew.textContent = inputBox.value;
+            inputBox.replaceWith(spanNew);
+            btn.textContent = 'Edit';
+          } else if(btn.textContent === 'Delete'){
+            li.remove();
+          }
+        }
+      });
+
+      // auto-save when clicking outside an edited input
+      document.addEventListener('click', (e)=>{
+        const edited = document.querySelector('#productList input');
+        if(edited && !edited.contains(e.target)){
+          const li = edited.closest('li');
+          const spanNew = document.createElement('span'); spanNew.className='editable'; spanNew.tabIndex=0; spanNew.textContent = edited.value;
+          edited.replaceWith(spanNew);
+          const editBtn = li.querySelector('.actions button'); if(editBtn) editBtn.textContent = 'Edit';
+        }
+      });
+
+      // seed 3 items
+      ['Apples','Socks','Notebook'].forEach(n => listEl.appendChild(createItem(n)));
+    })();
+  </script>
+</body>
+</html>

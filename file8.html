@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q8 - Custom Dropdown</title>
+  <style>body{font-family:Segoe UI,Arial;margin:16px}.dropdown{position:relative;display:inline-block} .options{position:absolute;left:0;top:36px;border:1px solid #ccc;background:#fff;display:none} .options.show{display:block} .options div{padding:6px;cursor:pointer} .options div:hover{background:#eee}</style>
+</head>
+<body>
+  <h1>Q8 - Custom Dropdown</h1>
+  <div class="dropdown" id="dd">
+    <button id="ddBtn">Select option</button>
+    <div class="options" id="opts">
+      <div data-val="1">Option 1</div>
+      <div data-val="2">Option 2</div>
+      <div data-val="3">Option 3</div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const dd = document.getElementById('dd'); const btn = document.getElementById('ddBtn'); const opts = document.getElementById('opts');
+      btn.addEventListener('click', ()=> opts.classList.toggle('show'));
+      opts.addEventListener('click', (e)=>{
+        const opt = e.target.closest('div[data-val]'); if(!opt) return;
+        btn.textContent = opt.textContent; opts.classList.remove('show');
+      });
+
+      // clicking outside closes (use capturing)
+      document.addEventListener('click', (e)=>{
+        if(!dd.contains(e.target)) opts.classList.remove('show');
+      }, true);
+    })();
+  </script>
+</body>
+</html>

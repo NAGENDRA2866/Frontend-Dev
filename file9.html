@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q9 - Form Submit Blocker</title>
+  <style>body{font-family:Segoe UI,Arial;margin:16px} .error{color:#a00;font-size:0.9em} .success{color:green}</style>
+</head>
+<body>
+  <h1>Q9 - Form Submit Blocker with Live Errors</h1>
+  <form id="f">
+    <div><label>Name: <input id="name" required /></label><div class="error" id="eName"></div></div>
+    <div><label>Email: <input id="email" required /></label><div class="error" id="eEmail"></div></div>
+    <div><label>Password: <input id="password" type="password" required /></label><div class="error" id="ePass"></div></div>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    (function(){
+      const f = document.getElementById('f');
+      const name = document.getElementById('name'); const email = document.getElementById('email'); const pass = document.getElementById('password');
+      const eName = document.getElementById('eName'); const eEmail = document.getElementById('eEmail'); const ePass = document.getElementById('ePass');
+      const result = document.getElementById('result');
+
+      function validate(){
+        let ok = true; eName.textContent=''; eEmail.textContent=''; ePass.textContent=''; result.textContent='';
+        if(!/^[A-Za-z ]+$/.test(name.value)) { eName.textContent='Name required (alphabets only)'; ok=false; }
+        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)) { eEmail.textContent='Valid email required'; ok=false; }
+        if(!/(?=.{6,})(?=.*[A-Z])(?=.*\d)/.test(pass.value)) { ePass.textContent='Password min6, include uppercase and number'; ok=false; }
+        return ok;
+      }
+
+      f.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        if(validate()){ result.innerHTML = '<div class="success">Form Submitted Successfully</div>'; }
+      });
+
+      [name,email,pass].forEach(inp => inp.addEventListener('input', ()=>{ validate(); }));
+    })();
+  </script>
+</body>
+</html>

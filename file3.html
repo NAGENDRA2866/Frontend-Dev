@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q3 - Multi-Step Form</title>
+  <style>body{font-family:Segoe UI,Arial;margin:16px} .step{display:none} .step.active{display:block} .errors{color:red}</style>
+</head>
+<body>
+  <h1>Q3 - Multi-Step Form</h1>
+  <div id="form">
+    <div class="step active" data-step="1">
+      <label>Name: <input id="name" /></label>
+    </div>
+    <div class="step" data-step="2">
+      <label>Email: <input id="email" /></label>
+    </div>
+    <div class="step" data-step="3">
+      <label>Password: <input id="password" type="password" /></label>
+    </div>
+    <div>
+      <button id="back">Back</button>
+      <button id="next">Next</button>
+    </div>
+    <div class="errors" id="errors"></div>
+    <div id="summary"></div>
+  </div>
+
+  <script>
+    (function(){
+      let step = 1; const total = 3;
+      const show = ()=>{
+        document.querySelectorAll('.step').forEach(s=> s.classList.toggle('active', Number(s.dataset.step)===step));
+      };
+      const back = document.getElementById('back');
+      const next = document.getElementById('next');
+      const errors = document.getElementById('errors');
+      const summary = document.getElementById('summary');
+
+      function validateCurrent(){
+        errors.textContent='';
+        if(step===1){ const v = document.getElementById('name').value.trim(); if(!v) { errors.textContent='Name required'; return false; } }
+        if(step===2){ const v = document.getElementById('email').value; if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { errors.textContent='Valid email required'; return false; } }
+        if(step===3){ const v = document.getElementById('password').value; if(v.length < 6){ errors.textContent='Password min 6 chars'; return false; } }
+        return true;
+      }
+
+      back.addEventListener('click', ()=>{ if(step>1) { step--; show(); } });
+      next.addEventListener('click', ()=>{
+        if(!validateCurrent()) return;
+        if(step < total){ step++; show(); }
+        else {
+          // show summary
+          summary.textContent = `Summary: Name=${document.getElementById('name').value}, Email=${document.getElementById('email').value}`;
+        }
+      });
+      show();
+    })();
+  </script>
+</body>
+</html>

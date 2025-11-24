@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Q2 - Live Character Counter</title>
+  <style>body{font-family:Segoe UI,Arial;margin:16px} textarea{width:100%;height:120px} #counter{font-weight:bold}</style>
+</head>
+<body>
+  <h1>Q2 - Live Character Counter</h1>
+  <textarea id="ta" maxlength="100"></textarea>
+  <div>Remaining: <span id="counter">100</span></div>
+  <button id="reset">Reset</button>
+
+  <script>
+    (function(){
+      const ta = document.getElementById('ta');
+      const counter = document.getElementById('counter');
+      const reset = document.getElementById('reset');
+      const max = 100;
+      function update(){
+        const left = max - ta.value.length;
+        counter.textContent = left;
+        if(left <= 0) counter.style.color = 'red';
+        else if(left <=20) counter.style.color = 'orange';
+        else counter.style.color = '';
+      }
+      ta.addEventListener('input', update);
+      ta.addEventListener('keydown', (e)=>{
+        if(ta.value.length >= max && e.key.length === 1 && !e.ctrlKey && !e.metaKey) e.preventDefault();
+      });
+      reset.addEventListener('click', ()=>{ ta.value=''; update(); });
+      update();
+    })();
+  </script>
+</body>
+</html>
