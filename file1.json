@@ -1,0 +1,9 @@
+{
+"products": [
+{ "id": 1, "name": "Bluetooth Headphones", "price": 1299.00, "image": "https://example.com/images/headphones.jpg" },
+{ "id": 2, "name": "Wireless Mouse", "price": 499.00, "image": "https://example.com/images/mouse.jpg" },
+{ "id": 3, "name": "Mechanical Keyboard", "price": 3499.00, "image": "https://example.com/images/keyboard.jpg" },
+{ "id": 4, "name": "USB-C Charger", "price": 899.00, "image": "https://example.com/images/charger.jpg" },
+{ "id": 5, "name": "27-inch Monitor", "price": 15999.00, "image": "https://example.com/images/monitor.jpg" }
+]
+}

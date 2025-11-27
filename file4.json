@@ -1,0 +1,23 @@
+{
+"users": [
+{ "id": 1, "name": "Aarav", "email": "aarav@example.com" },
+{ "id": 2, "name": "Isha", "email": "isha@example.com" },
+{ "id": 3, "name": "Karan", "email": "karan@example.com" },
+{ "id": 4, "name": "Meera", "email": "meera@example.com" },
+{ "id": 5, "name": "Vikram", "email": "vikram@example.com" }
+],
+"products": [
+{ "id": 1, "name": "Smartphone", "price": 19999.00 },
+{ "id": 2, "name": "Laptop", "price": 45999.00 },
+{ "id": 3, "name": "Smartwatch", "price": 6999.00 },
+{ "id": 4, "name": "Tablet", "price": 14999.00 },
+{ "id": 5, "name": "Earbuds", "price": 2499.00 }
+],
+"orders": [
+{ "id": 1, "userId": 1, "productIds": [1,5], "total": 22498.00, "date": "2025-10-05" },
+{ "id": 2, "userId": 2, "productIds": [2], "total": 45999.00, "date": "2025-11-01" },
+{ "id": 3, "userId": 3, "productIds": [3,5], "total": 9498.00, "date": "2025-11-12" },
+{ "id": 4, "userId": 1, "productIds": [4], "total": 14999.00, "date": "2025-09-20" },
+{ "id": 5, "userId": 4, "productIds": [2,1], "total": 65998.00, "date": "2025-08-30" }
+]
+}
